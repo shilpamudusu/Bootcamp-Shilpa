@@ -1,0 +1,51 @@
+@import 'variables.css';
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--body-font-size);
+    margin: var(--margin-medium);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--margin-medium);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--header-font-size);
+    margin-bottom: var(--margin-small);
+}
+
+h2 {
+    font-size: calc(var(--header-font-size) * 0.8);
+    color: var(--secondary-color);
+    margin-top: var(--margin-medium);
+}
+
+nav {
+    background-color: rgba(46, 204, 113, 0.2);
+    padding: var(--margin-small);
+    margin-bottom: var(--margin-medium);
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: var(--margin-small);
+}
+
+section {
+    margin-bottom: var(--margin-large);
+    padding: var(--margin-medium);
+    border: 1px solid var(--primary-color);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: var(--margin-small);
+}

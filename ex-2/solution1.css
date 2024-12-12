@@ -1,0 +1,15 @@
+css
+:root {
+    /* Color Variables */
+    --primary-color: #3498db;      /* Bright blue */
+    --secondary-color: #2ecc71;    /* Bright green */
+
+    /* Font Size Variables */
+    --header-font-size: 2.5rem;    /* Large size for headers */
+    --body-font-size: 1rem;        /* Standard size for body text */
+
+    /* Spacing Variables */
+    --margin-small: 0.5rem;        /* Small margin */
+    --margin-medium: 1rem;         /* Medium margin */
+    --margin-large: 2rem;          /* Large margin */
+}

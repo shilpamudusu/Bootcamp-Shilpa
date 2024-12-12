@@ -1,0 +1,56 @@
+@import 'variables.css';
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--body-font-size, 16px);
+    margin: var(--margin-medium, 1rem);
+    background-color: var(--background-color, white);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color, black);
+    color: white;
+    padding: var(--margin-medium, 1rem);
+    text-align: center;
+}
+
+h1 {
+    font-size: var(--header-font-size, 2rem);
+    margin-bottom: var(--margin-small, 0.5rem);
+}
+
+h2 {
+    font-size: var(--header-font-size, 2rem) * 0.8;
+    color: var(--secondary-color, green);
+    margin-top: var(--margin-medium, 1rem);
+}
+
+/* Table Styling with Alternating Rows */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--margin-medium, 1rem);
+}
+
+table, th, td {
+    border: 1px solid var(--primary-color, black);
+}
+
+th {
+    background-color: var(--primary-color, black);
+    color: white;
+    padding: var(--margin-small, 0.5rem);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(46, 204, 113, 0.1); /* Light secondary color for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(52, 152, 219, 0.1); /* Light primary color for odd rows */
+}
+
+td {
+    padding: var(--margin-small, 0.5rem);
+}

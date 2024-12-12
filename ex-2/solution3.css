@@ -1,0 +1,32 @@
+css
+:root {
+    /* Base Color Definitions */
+    --primary-hue: 210;
+    --secondary-hue: 120;
+
+    /* Light Theme Variables */
+    --light-primary-color: hsl(var(--primary-hue), 70%, 50%);
+    --light-secondary-color: hsl(var(--secondary-hue), 70%, 50%);
+    --light-text-color: hsl(0, 0%, 20%);
+    --light-background-color: hsl(0, 0%, 95%);
+
+    /* Dark Theme Variables */
+    --dark-primary-color: hsl(var(--primary-hue), 70%, 40%);
+    --dark-secondary-color: hsl(var(--secondary-hue), 70%, 40%);
+    --dark-text-color: hsl(0, 0%, 90%);
+    --dark-background-color: hsl(0, 0%, 20%);
+
+    /* Default to Light Theme */
+    --primary-color: var(--light-primary-color);
+    --secondary-color: var(--light-secondary-color);
+    --text-color: var(--light-text-color);
+    --background-color: var(--light-background-color);
+}
+
+/* Dark Theme Selector */
+[data-theme='dark'] {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --text-color: var(--dark-text-color);
+    --background-color: var(--dark-background-color);
+}
