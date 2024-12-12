@@ -1,0 +1,132 @@
+<html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Layout Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-areas: 
+        "header header header"
+        "sidebar-left main sidebar-right"
+        "footer footer footer";
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 200px 1fr 200px;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+    header {
+      grid-area: header;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #f0f0f0;
+      padding: 15px;
+    }
+    nav a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #333;
+    }
+    #sidebar-left {
+      grid-area: sidebar-left;
+    }
+    #sidebar-right {
+      grid-area: sidebar-right;
+    }
+    main {
+      grid-area: main;
+      padding: 20px;
+    }
+    footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Golden Layout Webpage</h1>
+  </header>
+
+  <!-- Left Sidebar -->
+  <nav id="sidebar-left">
+    <h2>Navigation</h2>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Main Content Area</h2>
+    <p>Welcome to the main content area! Here is a table listing three items:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Item 1</td>
+          <td>$10</td>
+          <td>A useful item.</td>
+        </tr>
+        <tr>
+          <td>Item 2</td>
+          <td>$20</td>
+          <td>Another useful item.</td>
+        </tr>
+        <tr>
+          <td>Item 3</td>
+          <td>$30</td>
+          <td>The most useful item.</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Right Sidebar -->
+  <nav id="sidebar-right">
+    <h2>Additional Links</h2>
+    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+    <a href="#support">Support</a>
+  </nav>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact: example@email.com</p>
+  </footer>
+</body>
+</html>
+</html>
