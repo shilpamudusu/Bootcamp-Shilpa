@@ -1,0 +1,35 @@
+<html>
+    <header>Exercise 5: CSS Grid Layout¶
+        Goal: Create a basic grid layout to organize content.
+        
+        Introduction: Explore Flexbox and CSS grid to create flexible and organized layouts. Learn about grid areas, overflow handling, and advanced features like minmax. Use css grids to do layouts. Learn about https://1linelayouts.glitch.me/.
+        
+        </header>
+        <p>
+            Explanation
+Grid Layout:
+
+grid-template-areas defines sections:
+"header header": Header spans across two columns.
+"sidebar main": Sidebar and main content sit side by side.
+"footer footer": Footer spans across two columns.
+grid-template-rows and grid-template-columns define the size of rows and columns:
+minmax(200px, 1fr) ensures the sidebar is at least 200px wide but can expand proportionally.
+2fr makes the main content area twice as wide as the sidebar.
+Overflow Handling:
+
+overflow-y: auto in the sidebar and main content ensures scrollable content without breaking the layout.
+Responsive Design:
+
+A media query adjusts the grid for screens narrower than 768px:
+The layout becomes a single-column stack with grid-template-areas reordered for mobile readability.
+One-Line Layout Inspiration:
+
+The minmax() function, combined with flexible grid areas, creates a layout that adapts to content and screen sizes dynamically.
+Additional Learning: 1linelayouts.glitch.me
+This is a great resource to explore practical, simple CSS layout patterns. Each pattern uses minimal code to achieve powerful results. Try implementing similar layouts for practice!
+
+This exercise combines the foundational grid principles with responsive techniques to create a clean and adaptable design.
+
+        </p>
+</html>
