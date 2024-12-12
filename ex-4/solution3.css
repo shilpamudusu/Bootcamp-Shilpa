@@ -1,0 +1,68 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Root font size for fluid typography */
+  html {
+    font-size: calc(16px + 0.5vw); /* Scales font size based on viewport width */
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  /* Container grid layout */
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+    width: min(90%, 1200px); /* Maximum width of 1200px, 90% of viewport as preferred */
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Header styles */
+  header h1 {
+    font-size: calc(2rem + 1vw); /* Dynamically adjusts heading size */
+    text-align: center;
+    color: #555;
+  }
+  
+  /* Main content */
+  main p {
+    font-size: calc(1rem + 0.2vw); /* Smooth scaling for text */
+    line-height: 1.8;
+    text-align: justify;
+    color: #666;
+  }
+  
+  /* Footer styling */
+  footer {
+    text-align: center;
+    font-size: calc(0.9rem + 0.2vw);
+    color: #999;
+  }
+  
+  /* Utility for responsiveness */
+  .container > * {
+    padding: 1rem;
+  }
+  
+  /* Extra feature: Hover effect */
+  .container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
