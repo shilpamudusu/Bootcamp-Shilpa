@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Icons</title>
+    
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Navigation bar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 50px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .navbar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar-item:hover {
+            color: #FF6347;
+        }
+
+        .navbar-item i, .navbar-item svg {
+            font-size: 30px;
+            margin-bottom: 5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effect for icons */
+        .navbar-item:hover i, .navbar-item:hover svg {
+            transform: scale(1.2); /* Slightly enlarge the icon */
+        }
+
+        /* Button styles for Download and Upload */
+        .button {
+            display: flex;
+            align-items: center;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .button svg {
+            margin-right: 10px;
+        }
+
+        /* Spacing between navbar items */
+        .navbar-item, .button {
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Home, About, Contact icons with labels -->
+        <a href="#" class="navbar-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+            </svg>
+            <span>Home</span>
+        </a>
+
+        <a href="#" class="navbar-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7h3v7h5V7h4v7h5V7h3L12 2z"></path>
+            </svg>
+            <span>About</span>
+        </a>
+
+        <a href="#" class="navbar-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10V3h-7V0H10v3H3v7H0v10h3v3h7v3h4v-3h7v-3h3V10z"></path>
+            </svg>
+            <span>Contact</span>
+        </a>
+
+        <!-- Download and Upload Buttons -->
+        <a href="#" class="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12.09l3.86-3.86L18 14l-6 6-6-6 2.14-2.86L12 15V3h0z"></path>
+            </svg>
+            Download
+        </a>
+
+        <a href="#" class="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21v-12.09l-3.86 3.86L6 10l6-6 6 6-2.14 2.86L12 9V21h0z"></path>
+            </svg>
+            Upload
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contrast Demonstration</title>
+  <style>
+    /* Global Styles */
+    :root {
+      --primary-color: #4CAF50; /* Green */
+      --secondary-color: #FF5722; /* Red-Orange */
+      --background-color: #ffffff; /* White */
+      --text-color: #212121; /* Dark Gray */
+      --border-color: #bbb; /* Light Gray */
+      --highlight-color: #FFEB3B; /* Yellow */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    /* Contrast Section */
+    .contrast-section {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+      padding: 20px;
+    }
+
+    .section {
+      width: 45%;
+      padding: 20px;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+
+    .good-contrast {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    .good-contrast h3{
+      color: white;
+    }
+
+    .bad-contrast {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .highlight {
+      background-color: var(--highlight-color);
+      color: var(--text-color);
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 768px) {
+      .contrast-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Accessibility & Contrast Demonstration</h1>
+    <h2>Understanding Color Combinations for Better Readability</h2>
+  </header>
+
+  <section class="contrast-section">
+    <!-- Good Contrast Section -->
+    <div class="section good-contrast">
+      <h3>Good Contrast</h3>
+      <p>This text has good contrast between the background and the text, making it easy to read for users with visual impairments.</p>
+      <div class="highlight">This section demonstrates the use of a primary color with adequate contrast.</div>
+    </div>
+
+    <!-- Bad Contrast Section -->
+    <div class="section bad-contrast">
+      <h3>Bad Contrast</h3>
+      <p>This text has poor contrast between the background and the text, which may be difficult for some users to read, especially those with color blindness or low vision.</p>
+      <div class="highlight">This section demonstrates the use of a secondary color with inadequate contrast.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="text-align: center; margin-top: 40px; font-size: 14px;">Designed by Shilpa</p>
+  </footer>
+
+</body>
+</html>

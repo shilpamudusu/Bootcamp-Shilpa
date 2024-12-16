@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Images with Lazy Loading</title>
+    <style>
+        /* Simple styling to center the image */
+        .image-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <h1>Responsive Images with Lazy Loading</h1>
+
+        <!-- Picture Element with multiple image sources -->
+        <picture>
+            <!-- Low resolution image for small devices (max-width: 600px) -->
+            <source srcset="https://via.placeholder.com/600x400?text=Low+Res+Image" media="(max-width: 600px)">
+
+            <!-- High resolution image for larger devices (min-width: 601px) -->
+            <source srcset="https://via.placeholder.com/1200x800?text=High+Res+Image" media="(min-width: 601px)">
+
+            <!-- Fallback image for browsers that don't support <picture> -->
+            <img src="https://via.placeholder.com/1200x800?text=Fallback+Image" alt="Responsive Image" loading="lazy">
+        </picture>
+    </div>
+
+</body>
+</html>

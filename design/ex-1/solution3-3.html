@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Typographic Adjustments</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		/* Font Face Definitions */
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('fonts/OpenSans-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Roboto Mono';
+			src: url('fonts/RobotoMono-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		/* General Styling */
+		body {
+			font-family: 'Open Sans', sans-serif;
+			line-height: 1.8;
+			letter-spacing: 0.5px;
+			word-spacing: 2px;
+			margin: 20px;
+			color: #333;
+		}
+
+		h1, h2, h3 {
+			font-family: 'Merriweather', serif;
+			margin-top: 20px;
+		}
+
+		h1 {
+			font-weight: 700;
+			font-size: 2.5rem;
+			line-height: 1.2;
+			letter-spacing: 1px;
+		}
+
+		h2 {
+			font-weight: 700;
+			font-size: 2rem;
+			line-height: 1.3;
+			letter-spacing: 0.8px;
+		}
+
+		h3 {
+			font-weight: 400;
+			font-size: 1.5rem;
+			line-height: 1.4;
+			letter-spacing: 0.5px;
+		}
+
+		p {
+			margin-bottom: 20px;
+		}
+
+		/* Section-Specific Styles */
+		.demo-section {
+			margin-top: 30px;
+			padding: 20px;
+			background: #f8f9fa;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+
+		.code-block {
+			font-family: 'Roboto Mono', monospace;
+			background: #f4f4f4;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 6px;
+			line-height: 1.6;
+		}
+
+		.tight-spacing {
+			line-height: 1.2;
+			letter-spacing: -0.5px;
+			word-spacing: 0px;
+		}
+
+		.wide-spacing {
+			line-height: 2;
+			letter-spacing: 2px;
+			word-spacing: 5px;
+		}
+	</style>
+</head>
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>Typographic Adjustments in Action</h1>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+			<p>This page demonstrates various font adjustments to illustrate the impact of properties like <b>line-height</b>, <b>letter-spacing</b>, and <b>word-spacing</b> on readability and aesthetics.</p>
+		</div>
+	</section>
+
+	<section class="demo-section">
+		<h2>Default Spacing</h2>
+		<p>Below is an example of text using the default settings for line height, letter spacing, and word spacing. These values ensure balance and readability:</p>
+		<p>Typography plays a critical role in design. Adjusting spacing can greatly influence how readable and visually appealing the text appears.</p>
+	</section>
+
+	<section class="demo-section">
+		<h2>Tight Spacing</h2>
+		<p class="tight-spacing">This text uses a tight spacing configuration with reduced <b>line-height</b>, <b>letter-spacing</b>, and <b>word-spacing</b>. Tight spacing is suitable for compact content but can hinder readability for longer texts.</p>
+	</section>
+
+	<section class="demo-section">
+		<h2>Wide Spacing</h2>
+		<p class="wide-spacing">This text uses a wide spacing configuration with increased <b>line-height</b>, <b>letter-spacing</b>, and <b>word-spacing</b>. Wider spacing is often used for headlines or artistic text elements, improving readability in some contexts.</p>
+	</section>
+
+	<section class="demo-section">
+		<h2>Code Blocks with Monospace Fonts</h2>
+		<p>Code snippets use the <b>Roboto Mono</b> font to differentiate them visually. Adjustments for line height help improve readability:</p>
+		<div class="code-block">console.log("Hello, World!");</div>
+	</section>
+
+	<footer>
+		<p>Experiment with font spacing and height to find the best balance for your content.</p>
+	</footer>
+
+</div>
+</body>
+</html>

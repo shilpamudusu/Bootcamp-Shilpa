@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Web Developer">
+    <meta name="description" content="A page with gradient themes using CSS">
+    <title>Gradient Theme Design</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        /* Gradient Header Styles */
+        header {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+        }
+
+        /* Main Content Styles */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Button Styles with Radial Gradient */
+        .btn {
+            display: inline-block;
+            background: radial-gradient(circle, #ff7e5f, #feb47b);
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: radial-gradient(circle, #feb47b, #ff7e5f);
+        }
+
+        /* Gradient Background for Sections */
+        .section {
+            padding: 50px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: white;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+
+        .section p {
+            font-size: 1.1em;
+        }
+
+        /* Gradient Angle & Stops for the Demonstration */
+        .gradient-demo {
+            background: linear-gradient(45deg, #ff9a8b 30%, #fecfef 70%);
+            padding: 40px;
+            margin-top: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gradient-demo h4 {
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Gradient Theme Page</h1>
+        <h2>Using CSS Gradients for Design</h2>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <p>CSS gradients are a great way to enhance the visual appeal of your web pages. They allow you to add smooth transitions between colors. In this design, we'll explore how linear gradients and radial gradients can be used to create visually appealing headers and buttons.</p>
+        <a href="#" class="btn">Learn More</a>
+    </div>
+
+    <!-- Gradient Section -->
+    <div class="section">
+        <h3>Exploring Gradients</h3>
+        <p>Linear gradients create a smooth transition between two or more colors, often used for backgrounds. Radial gradients are circular gradients that radiate from a central point, perfect for buttons or highlights.</p>
+    </div>
+
+    <!-- Gradient Demo -->
+    <div class="gradient-demo">
+        <h4>Gradient Angle & Stops Demo</h4>
+        <p>This section demonstrates how gradient angles and stops can affect the design. The gradient starts with one color at 30% and transitions into another at 70%.</p>
+    </div>
+
+</body>
+</html>

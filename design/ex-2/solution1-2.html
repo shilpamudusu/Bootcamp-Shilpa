@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementary Color Scheme</title>
+    <style>
+        /* Base colors for the complementary theme */
+        :root {
+            --base-color-blue: #007BFF; /* Blue */
+            --complementary-color-orange: #FF6A13; /* Orange */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light background color for high contrast */
+            color: var(--base-color-blue); /* Text in blue */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--complementary-color-orange); /* Heading in complementary orange */
+            margin-bottom: 30px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--base-color-blue); /* Card in blue */
+            color: #fff; /* Text inside card is white for contrast */
+            border: 2px solid var(--complementary-color-orange); /* Orange border for contrast */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            background-color: var(--complementary-color-orange); /* Background turns orange on hover */
+            border: 2px solid var(--base-color-blue); /* Border turns blue on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+        .card:hover h2 {
+            color: white;
+        }
+
+        /* Paragraph styling inside the card */
+        .card p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* A link style to make it stand out */
+        a {
+            color: var(--complementary-color-orange); /* Orange link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover for clarity */
+        }
+
+        /* Section headers */
+        h2, h3 {
+            color: var(--complementary-color-orange); /* Sub-headers in orange */
+        }
+        
+        .summary {
+            background-color: var(--base-color-blue); /* Blue background for summary */
+            color: #fff; /* White text for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Complementary Color Scheme Example</h1>
+
+    <!-- Card Component -->
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>This card follows a complementary color scheme where the primary elements use blue (#007BFF) and the accent elements use its complementary orange (#FF6A13). The hover effect swaps the background and border colors for a dynamic, interactive experience.</p>
+        <p>Hover over the card to see the change in color and shadow effect!</p>
+    </div>
+
+    <div class="summary" role="article">
+        <h3>Summary</h3>
+        <p>This is an example page using a complementary color scheme. The background is light, and the primary color (blue) is contrasted with its complementary color (orange) for high visibility and readability. The card has a strong orange border and text, making it stand out against the blue background.</p>
+        <p>Explore the benefits of complementary colors in design, especially when you want elements to stand out clearly. Try hovering over the card to see the transition in colors and shadows.</p>
+    </div>
+
+    <footer>
+        <p>Learn more about <a href="https://www.w3schools.com/colors/colors_complementary.asp" target="_blank">complementary colors</a> and their applications in design.</p>
+    </footer>
+
+</body>
+</html>

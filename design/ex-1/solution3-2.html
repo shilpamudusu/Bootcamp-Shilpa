@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Typographic Hierarchy Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		/* Font Face Definitions */
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Merriweather';
+			src: url('fonts/Merriweather-Bold.woff2') format('woff2');
+			font-weight: 700;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('fonts/OpenSans-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Roboto Mono';
+			src: url('fonts/RobotoMono-Regular.woff2') format('woff2');
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		/* General Styling */
+		body {
+			font-family: 'Open Sans', sans-serif;
+			line-height: 1.6;
+			margin: 20px;
+			color: #333;
+		}
+
+		h1, h2, h3 {
+			font-family: 'Merriweather', serif;
+			margin-top: 20px;
+		}
+
+		h1 {
+			font-weight: 700;
+			font-size: 2.5rem;
+		}
+
+		h2 {
+			font-weight: 700;
+			font-size: 2rem;
+		}
+
+		h3 {
+			font-weight: 400;
+			font-size: 1.5rem;
+		}
+
+		code {
+			font-family: 'Roboto Mono', monospace;
+			background: #f4f4f4;
+			padding: 2px 4px;
+			border-radius: 4px;
+		}
+
+		.demo-section {
+			margin-top: 30px;
+			padding: 20px;
+			background: #f8f9fa;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+
+		.demo-heading {
+			font-size: 2rem;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>Typographic Hierarchy with Google Fonts</h1>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+			<p>This page demonstrates a typographic hierarchy using multiple font families from Google Fonts:</p>
+			<ul>
+				<li><b>Headers:</b> Merriweather (serif)</li>
+				<li><b>Body Text:</b> Open Sans (sans-serif)</li>
+				<li><b>Code Blocks:</b> Roboto Mono (monospace)</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="demo-section">
+		<h2 class="demo-heading">Headers</h2>
+		<p>Headers on this page use the <b>Merriweather</b> font to create a formal and elegant feel, ideal for headings.</p>
+	</section>
+
+	<section class="demo-section">
+		<h2 class="demo-heading">Body Text</h2>
+		<p>Body text is styled with the <b>Open Sans</b> font for readability and a clean appearance.</p>
+	</section>
+
+	<section class="demo-section">
+		<h2 class="demo-heading">Code Blocks</h2>
+		<p>Code snippets use the <b>Roboto Mono</b> font to differentiate them visually. Example:</p>
+		<code>console.log("Hello, World!");</code>
+	</section>
+
+	<footer>
+		<p>Experiment with different font pairings to find the right balance for your project!</p>
+	</footer>
+
+</div>
+</body>
+</html>

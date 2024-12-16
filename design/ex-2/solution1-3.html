@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Color Scheme Example</title>
+    <style>
+        /* Base colors for the three-color scheme */
+        :root {
+            --base-color-blue: #007BFF; /* Blue (Base) */
+            --complementary-color-orange: #FF6A13; /* Orange (Complementary) */
+            --accent-color-green: #28A745; /* Green (Accent) */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light background color */
+            color: var(--base-color-blue); /* Text in blue */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--complementary-color-orange); /* Heading in complementary orange */
+            margin-bottom: 30px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--base-color-blue); /* Card in blue */
+            color: #fff; /* White text for contrast */
+            border: 2px solid var(--complementary-color-orange); /* Orange border for contrast */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        /* Card hover effect */
+        .card:hover {
+            background-color: var(--complementary-color-orange); /* Background turns orange on hover */
+            border: 2px solid var(--base-color-blue); /* Border turns blue on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly darker shadow on hover */
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+        .card:hover h2 {
+            color: white;
+        }
+
+        /* Paragraph styling inside the card */
+        .card p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-color-green); /* Green for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: var(--accent-color-green); /* Green background for buttons */
+            color: #fff; /* White text on the button */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        /* Section headers */
+        h2, h3 {
+            color: var(--complementary-color-orange); /* Sub-headers in orange */
+        }
+
+        /* Summary Section */
+        .summary {
+            background-color: var(--base-color-blue); /* Blue background for summary */
+            color: #fff; /* White text for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer p {
+            color: var(--base-color-blue); /* Footer text in blue */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Three-Color Scheme Example</h1>
+
+    <!-- Card Component -->
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>This card follows a three-color scheme where the primary elements use blue (#007BFF), the complementary color is orange (#FF6A13), and the accent color is green (#28A745). The accent color is applied to links and buttons for emphasis.</p>
+        <p>Hover over the card to see the color change! Also, click the button below to see the accent color in action.</p>
+        <button class="btn">Click Me</button>
+    </div>
+
+    <div class="summary" role="article">
+        <h3>Summary</h3>
+        <p>This page demonstrates a three-color scheme using blue, orange, and green. The blue is used as the base color, orange as the complementary color, and green as the accent color. The green is applied to interactive elements such as links and buttons, while the orange is used for headers to provide a bold contrast against the blue background.</p>
+        <p>Explore how the use of accent colors can make a page more dynamic and improve the user experience.</p>
+    </div>
+
+    <footer>
+        <p>Learn more about <a href="https://www.w3schools.com/colors/colors_complementary.asp" target="_blank">complementary and accent colors</a> in design.</p>
+    </footer>
+
+</body>
+</html>

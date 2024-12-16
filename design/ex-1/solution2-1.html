@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Zen Garden: The Beauty of CSS Design</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Dave Shea">
+	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
+	<meta name="robots" content="all">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+	<style>
+		/* Font Styles */
+		body {
+			font-family: 'Roboto', sans-serif;
+			line-height: 1.6;
+			font-weight: 400; /* Normal weight for body text */
+		}
+
+		h1 {
+			font-family: 'Merriweather', serif;
+			font-weight: 700; /* Bold for the main heading */
+			color: #333;
+		}
+
+		h2, h3 {
+			font-family: 'Merriweather', serif;
+			font-weight: 400; /* Normal for subheadings */
+			color: #444;
+		}
+
+		p, li {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300; /* Light weight for paragraph text */
+			color: #555;
+		}
+
+		/* Styles for code block */
+		pre {
+			background: #f4f4f4;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			padding: 15px;
+			overflow-x: auto;
+			font-family: 'Source Code Pro', monospace;
+			font-weight: 400; /* Normal weight for preformatted text */
+		}
+
+		code {
+			font-family: 'Source Code Pro', monospace;
+			font-weight: 600; /* Semi-bold for inline code */
+			color: #c7254e;
+		}
+
+		/* Informational Section Styling */
+		.info {
+			background: #e0f7fa;
+			border-left: 5px solid #0097a7;
+			padding: 15px;
+			margin: 20px 0;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 400;
+		}
+	</style>
+</head>
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>CSS Zen Garden</h1>
+			<h2>The Beauty of <abbr title="Cascading Style Sheets">CSS</abbr> Design</h2>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+			<p>This page is downloaded from CSS Zen Garden. The idea for you is to:</p>
+			<ol>
+				<li>Start from this page.</li>
+				<li>Enhance it progressively, by linking your CSS to it.</li>
+				<li>Add additional material to the HTML as well.</li>
+			</ol>
+			<div class="warning">
+				<p>Do not pay attention to the text. We are using it merely to illustrate the design concepts.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Font Weights Information Section -->
+	<section class="info">
+		<h3>Font Weights Applied</h3>
+		<ul>
+			<li><strong>Body Text</strong>: Roboto (Sans-Serif), normal weight.</li>
+			<li><strong>Main Heading (h1)</strong>: Merriweather (Serif), bold weight.</li>
+			<li><strong>Subheadings (h2, h3)</strong>: Merriweather (Serif), normal weight.</li>
+			<li><strong>Paragraph and List Text</strong>: Roboto (Sans-Serif), light weight.</li>
+			<li><strong>Code Blocks</strong>: Source Code Pro (Monospace), normal for preformatted text; Semi-bold for inline code.</li>
+		</ul>
+	</section>
+
+	<!-- Added Code Block Section -->
+	<section class="code-example" id="zen-code-example">
+		<h3>JavaScript Code Example</h3>
+		<pre><code>
+function sayHello() {
+    const message = "Hello, World!";
+    console.log(message);
+}
+
+const sum = (a, b) => {
+    return a + b;
+};
+
+sayHello();
+console.log(sum(5, 3));
+		</code></pre>
+	</section>
+
+	<div class="main supporting" id="zen-supporting" role="main">
+		<div class="explanation" id="zen-explanation" role="article">
+			<h3>So What is This About?</h3>
+			<p>There is a continuing need to show the power of <abbr title="Cascading Style Sheets">CSS</abbr>. The Zen Garden aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list. Clicking on any one will load the style sheet into this very page. The <abbr title="HyperText Markup Language">HTML</abbr> remains the same, the only thing that has changed is the external <abbr title="Cascading Style Sheets">CSS</abbr> file. Yes, really.</p>
+		</div>
+	</div>
+
+	<footer>
+		<a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="zen-validate-html">HTML</a>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS" class="zen-validate-css">CSS</a>
+	</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Web Developer">
+    <meta name="description" content="Responsive Color Palette using CSS Variables">
+    <title>Responsive Color Palette</title>
+    <style>
+        /* Base Styles */
+        :root {
+            /* Base colors */
+            --primary: #4CAF50;
+            --secondary: #FF9800;
+            --background: #f0f0f0;
+            --text-color: #333;
+
+            /* Lighten and Darken base colors using custom properties */
+            --primary-light: #66bb6a; /* lighten */
+            --primary-dark: #388e3c; /* darken */
+            --secondary-light: #ffb74d; /* lighten */
+            --secondary-dark: #f57c00; /* darken */
+            --background-light: #ffffff;
+            --background-dark: #121212;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .card {
+            background-color: var(--primary-light);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media Queries for Responsiveness */
+        /* Default (small screens) */
+        @media (max-width: 600px) {
+            :root {
+                --primary: #4CAF50;
+                --secondary: #FF9800;
+                --background: #f0f0f0;
+                --text-color: #333;
+            }
+
+            header {
+                font-size: 1.5em;
+            }
+
+            .content {
+                font-size: 1em;
+            }
+        }
+
+        /* Medium Screens (tablets) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+            :root {
+                --primary: #388e3c; /* Darker primary for mid-sized screens */
+                --secondary: #ff9800;
+                --background: #ffffff;
+                --text-color: #333;
+            }
+
+            header {
+                font-size: 2em;
+            }
+
+            .content {
+                font-size: 1.1em;
+            }
+
+            .card {
+                background-color: var(--primary-light);
+            }
+        }
+
+        /* Large Screens (desktops) */
+        @media (min-width: 1025px) {
+            :root {
+                --primary: #4CAF50; /* Default color for large screens */
+                --secondary: #ff5722; /* Slightly more vibrant secondary */
+                --background: #f0f0f0;
+                --text-color: #333;
+            }
+
+            header {
+                font-size: 2.5em;
+            }
+
+            .content {
+                font-size: 1.2em;
+            }
+
+            .button {
+                background-color: var(--secondary);
+                font-size: 1.2em;
+            }
+
+            .card {
+                background-color: var(--primary-light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Responsive Color Palette
+    </header>
+
+    <div class="content">
+        <p>This page demonstrates how to create a responsive color palette using CSS variables and media queries.</p>
+        <p>As the screen size changes, the colors, fonts, and layout adjust dynamically to create a better user experience.</p>
+        <a href="#" class="button">Click Me</a>
+    </div>
+
+    <div class="card">
+        <h3>Card with Gradient Theme</h3>
+        <p>This card uses a lighter shade of the primary color for the background.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>CSS Zen Garden: Text Effects</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Dave Shea">
+	<meta name="description" content="A demonstration of text effects like drop cap, text shadow, and image inside text.">
+	<meta name="robots" content="all">
+
+	<!-- Google Fonts: Roboto Flex (Variable Font) -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100..900&display=swap" rel="stylesheet">
+
+	<style>
+		/* General Styling */
+		body {
+			font-family: 'Roboto Flex', sans-serif;
+			line-height: 1.6;
+			margin: 20px;
+			color: #333;
+		}
+
+		h1 {
+			font-size: 3rem;
+			font-variation-settings: "wght" 800;
+			color: #2a2a2a;
+			text-align: center;
+			background: url('https://cdn5.iguzzini.com/getmedia/a2bae952-db23-4e77-ac68-65a23ac45a40/Anteprima-articolo-natale') no-repeat center;
+			background-size: cover;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+
+		/* Drop Cap Effect */
+		.dropcap {
+			font-size: 4rem;
+			line-height: 1;
+			font-weight: bold;
+			float: left;
+			margin-right: 10px;
+			color: #00796b;
+		}
+
+		/* Text Shadow Effect */
+		.text-shadow {
+			font-size: 2rem;
+			text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Heading with Background Image Inside Text */
+		.heading-with-image {
+			font-size: 5rem;
+			font-weight: bold;
+			background: url('https://cdn5.iguzzini.com/getmedia/a2bae952-db23-4e77-ac68-65a23ac45a40/Anteprima-articolo-natale') no-repeat center;
+			background-size: cover;
+			-webkit-background-clip: text;
+			color: transparent;
+			text-align: center;
+			padding: 20px;
+		}
+
+		/* Demo Section Styling */
+		.demo-section {
+			margin-top: 30px;
+			padding: 20px;
+			background: #f8f9fa;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+		}
+
+		.demo-heading {
+			font-variation-settings: "wght" 700;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>CSS Zen Garden: Text Effects</h1>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+			<p>Learn to apply creative text effects like drop caps, text shadows, and text with an image inside. This page demonstrates these techniques using CSS.</p>
+		</div>
+	</section>
+
+	<!-- Demo Section for Text Effects -->
+	<section class="demo-section">
+		<h2 class="demo-heading">Text Effects Examples</h2>
+
+		<!-- Drop Cap -->
+		<p><span class="dropcap">T</span>his is a demonstration of a drop cap, where the first letter of the paragraph is enlarged and "drops" into the text. This effect adds a touch of elegance to the beginning of a paragraph or article.</p>
+
+		<!-- Text Shadow -->
+		<p class="text-shadow">This paragraph shows a text-shadow effect, where the text has a soft shadow behind it, creating a three-dimensional look. This can make the text appear more prominent and stylish.</p>
+
+		<!-- Heading with Image Inside Text -->
+		<h3 class="heading-with-image">Image Inside Text Effect</h3>
+		<p>This heading has an image background that shows only through the letters of the text. The image is clipped to the text using the `background-clip: text` property, allowing for stunning visual effects.</p>
+
+	</section>
+
+	<footer>
+		<a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s HTML" class="zen-validate-html">HTML</a>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS" class="zen-validate-css">CSS</a>
+	</footer>
+</div>
+</body>
+</html>

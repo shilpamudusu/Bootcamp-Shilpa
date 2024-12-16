@@ -1,0 +1,178 @@
+body {
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: rgb(204, 204, 204);
+  }
+  .home-top {
+    width: 104%;
+    background-color: #073302;
+    color: white;
+    font-size: 11px;
+    font-family: tahoma;
+    height: 17px;
+    text-align: right;
+  }
+  
+  .title img {
+    max-width: 104.5%;
+  }
+  .heading {
+    display: flex;
+    color: rgb(165, 42, 42);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+  }
+  .resizeable-image {
+    max-width: 80%;
+  }
+  .link-container {
+    margin-top: 0px;
+    width: 104%;
+    display: flex;
+  }
+  .link {
+    flex: 1;
+    margin: 5px; /* Small margin on the right and left */
+    margin-top: 0;
+    background-color: #073302; /* Optional: Style the inner divs as you like */
+    border: 1px solid rgb(5, 5, 5); /* Optional: Add a border to the inner divs */
+    text-align: center; /* Optional: Center the content in the inner divs */
+    color: white;
+  }
+  .main-section {
+    margin-top: 0px;
+    width: 104%;
+    display: flex;
+  }
+  .three-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .three-link {
+    margin-right: 10px;
+  }
+  
+  /* First div (30% width) */
+  .first-div {
+    flex: 20%;
+  
+    background-color: rgb(7, 51, 2);
+  }
+  
+  /* Title in the first div */
+  .title {
+    color: #ffffff;
+    font-size: 12px;
+    text-align: left;
+    background-color: rgb(52, 150, 42);
+  }
+  
+  /* List of links in the first div */
+  .link-list {
+    text-align: center;
+    list-style: circle;
+  }
+  
+  .link-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Second div (70% width) */
+  .second-div {
+    flex: 80%;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  /* Sub-divisions within the second div */
+  .sub-division {
+    margin-bottom: 20px;
+  }
+  .sub-division-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .quick-links label {
+    font-size: small;
+  }
+  
+  /* Quick Links text */
+  
+  .quick-links-text {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Quick Links button */
+  
+  .quick-links-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Heading in the second div */
+  .heading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Paragraphs in the second div */
+  .paragraph {
+    text-align: left;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .first-div-link {
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+  }
+  .last {
+    margin-top: 20px;
+    font-size: small;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .last-para {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer {
+    margin-top: 20px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgb(32, 31, 31);
+  }
+  .icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+    font-size: small;
+    margin-right: 10px;
+  }
+  .icons a {
+    font-size: small;
+    text-decoration: none;
+    color: rgb(32, 31, 31);
+    margin-right: 10px;
+  }
+  .icons img {
+    margin-right: 10px;
+  }

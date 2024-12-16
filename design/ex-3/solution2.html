@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Grid with Font Awesome and SVG</title>
+    
+    <!-- Link to Font Awesome CDN for icon usage -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Grid layout for icons */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Styling each icon */
+        .icon-grid i, .icon-grid svg {
+            font-size: 50px; /* Increase icon size */
+            color: #4CAF50; /* Icon color (green) */
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effect for icons */
+        .icon-grid i:hover, .icon-grid svg:hover {
+            transform: scale(1.2); /* Slightly enlarge the icon */
+            color: #FF6347; /* Change color on hover (tomato) */
+        }
+
+        /* Inline SVG Styling */
+        .icon-grid svg {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Font Awesome and Inline SVG Icons</h1>
+    <p>Click on the icons below to see the hover effect:</p>
+
+    <!-- Grid for icons -->
+    <div class="icon-grid">
+        <!-- Font Awesome Icons -->
+        <i class="fas fa-home"></i>
+        <i class="fas fa-camera"></i>
+        <i class="fas fa-heart"></i>
+
+        <!-- Inline SVG Icons -->
+        <!-- SVG icon 1: Star -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 17l-5 3 1-6-4-4 6-1 2-5 2 5 6 1-4 4 1 6-5-3z"></path>
+        </svg>
+
+        <!-- SVG icon 2: Bell -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8v7a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8z"></path>
+            <path d="M12 19c1.104 0 2-.896 2-2H10c0 1.104.896 2 2 2z"></path>
+        </svg>
+
+        <!-- SVG icon 3: Cloud -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16h-8a4 4 0 0 1 0-8h1a5 5 0 1 1 9 0 4 4 0 0 1 0 8z"></path>
+        </svg>
+    </div>
+
+</body>
+</html>
