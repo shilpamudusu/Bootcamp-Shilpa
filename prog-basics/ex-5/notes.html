@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5: Managing Environment Variables</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2C3E50;
+        }
+        .level {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .note {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .note p {
+            margin: 5px 0;
+        }
+        .outcome {
+            background-color: #eaf0f9;
+            padding: 10px;
+            border-left: 5px solid #1abc9c;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Exercise 5: Managing Environment Variables</h1>
+
+        <!-- Level 1 -->
+        <div class="level">
+            <strong>Level 1: Basic Environment Variable Setup</strong>
+        </div>
+        <div class="note">
+            <p><strong>Objective:</strong> Install <span class="highlight">dotenv</span> and configure environment variables from a <span class="highlight">.env</span> file (e.g., <span class="highlight">PORT</span>, <span class="highlight">DB_HOST</span>).</p>
+            <p><strong>Steps:</strong></p>
+            <ul>
+                <li>Install <span class="highlight">dotenv</span> package.</li>
+                <li>Create a <span class="highlight">.env</span> file with configuration variables.</li>
+                <li>Load variables in the program using <span class="highlight">dotenv</span>.</li>
+            </ul>
+            <p><strong>Outcome:</strong> The program reads and uses values from the <span class="highlight">.env</span> file.</p>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level">
+            <strong>Level 2: Handling Missing Environment Variables</strong>
+        </div>
+        <div class="note">
+            <p><strong>Objective:</strong> Add fallback values for missing environment variables and log warnings for missing variables.</p>
+            <p><strong>Steps:</strong></p>
+            <ul>
+                <li>Add fallback values for variables in case they are missing.</li>
+                <li>Log a warning for missing variables (without exposing sensitive info).</li>
+            </ul>
+            <p><strong>Outcome:</strong> Missing variables are handled gracefully with fallback values, and warnings are logged when variables are missing.</p>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level">
+            <strong>Level 3: Secure Configuration with Environment Variables</strong>
+        </div>
+        <div class="note">
+            <p><strong>Objective:</strong> Use environment variables to securely configure a database connection (SQLite) and API credentials, and avoid logging sensitive information.</p>
+            <p><strong>Steps:</strong></p>
+            <ul>
+                <li>Use <span class="highlight">dotenv</span> to configure SQLite and API credentials securely.</li>
+                <li>Ensure sensitive information is never logged directly.</li>
+                <li>Handle missing credentials securely, with appropriate warnings.</li>
+            </ul>
+            <p><strong>Outcome:</strong> Sensitive configuration details are handled securely, and missing credentials are flagged without exposure.</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Exercise Notes | Designed for readability and clarity</p>
+        </footer>
+    </div>
+
+</body>
+</html>

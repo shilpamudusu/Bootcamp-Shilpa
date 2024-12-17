@@ -1,0 +1,22 @@
+{
+  "name": "level-3",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.12",
+    "js-yaml": "^4.1.0",
+    "winston": "^3.17.0"
+  },
+  
+  "devDependencies": {},
+  "description": ""
+}

@@ -1,0 +1,8 @@
+loggingLevel: DEBUG
+commands:
+  sin:
+    file: "./mathFunctions.js"
+    function: "sin"
+  cos:
+    file: "./mathFunctions.js"
+    function: "cos"

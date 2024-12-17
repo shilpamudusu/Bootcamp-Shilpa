@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      color: #16a085;
+    }
+    .level {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .code {
+      background-color: #34495e;
+      color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 10px;
+    }
+    .note {
+      background-color: #f39c12;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .important {
+      background-color: #e74c3c;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    ul {
+      margin-top: 10px;
+    }
+    pre {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise 2</h1>
+
+  <div class="level">
+    <h2>Level 1: Sum Calculation</h2>
+    <ul>
+      <li><strong>Problem:</strong> Create a script that calculates the sum of numbers passed as command-line arguments.</li>
+      <li><strong>Solution:</strong> The script uses <code>process.argv</code> to parse command-line arguments and calculate the sum of the numbers.</li>
+      <li><strong>Code:</strong>
+        <pre class="code">
+const args = process.argv.slice(2);
+let sum = 0;
+args.forEach(arg => {
+  const number = parseFloat(arg);
+  if (isNaN(number)) {
+    console.error(`Error: "${arg}" is not a valid number.`);
+    process.exit(1);
+  }
+  sum += number;
+});
+console.log(`The sum of the numbers is: ${sum}`);
+        </pre>
+      </li>
+    </ul>
+  </div>
+
+  <div class="level">
+    <h2>Level 2: Add Multiply Flag</h2>
+    <ul>
+      <li><strong>Problem:</strong> Add a <code>--multiply</code> flag to the script to multiply numbers instead of adding them.</li>
+      <li><strong>Solution:</strong> Check for the <code>--multiply</code> flag and perform the respective operation.</li>
+      <li><strong>Code:</strong>
+        <pre class="code">
+const args = process.argv.slice(2);
+const multiplyMode = args.includes("--multiply");
+const numbers = args.filter(arg => !isNaN(parseFloat(arg)));
+
+if (numbers.length === 0) {
+  console.error("Error: Please provide valid numbers.");
+  process.exit(1);
+}
+
+const parsedNumbers = numbers.map(num => parseFloat(num));
+
+let result;
+if (multiplyMode) {
+  result = parsedNumbers.reduce((product, num) => product * num, 1);
+} else {
+  result = parsedNumbers.reduce((sum, num) => sum + num, 0);
+}
+console.log(`The ${multiplyMode ? 'product' : 'sum'} of the numbers is: ${result}`);
+        </pre>
+      </li>
+    </ul>
+  </div>
+
+  <div class="level">
+    <h2>Level 3: Modularize and Use bin</h2>
+    <ul>
+      <li><strong>Problem:</strong> Create a separate file for <code>add</code> and <code>multiply</code> functions. Use <code>npm link</code> to run the script as a global command.</li>
+      <li><strong>Solution:</strong> Create a <code>mathutils.js</code> file for the operations, then update the <code>sum.js</code> file to use the <code>bin</code> section in <code>package.json</code>.</li>
+      <li><strong>Code for <code>mathutils.js</code>:</strong>
+        <pre class="code">
+function add(numbers) {
+  return numbers.reduce((sum, num) => sum + num, 0);
+}
+
+function multiply(numbers) {
+  return numbers.reduce((product, num) => product * num, 1);
+}
+
+module.exports = { add, multiply };
+        </pre>
+      </li>
+      <li><strong>Code for <code>sum.js</code>:</strong>
+        <pre class="code">
+#!/usr/bin/env node
+const { add, multiply } = require('./mathutils');
+const args = process.argv.slice(2);
+
+if (args.includes("--help") || args.length < 2) {
+  console.log("Usage: node sum.js <command> [numbers]");
+  process.exit(0);
+}
+
+const [command, ...operands] = args;
+const numbers = operands.map(arg => parseFloat(arg));
+
+if (numbers.some(isNaN)) {
+  console.error("Error: All operands must be valid numbers.");
+  process.exit(1);
+}
+
+let result;
+if (command === "add") {
+  result = add(numbers);
+} else if (command === "multiply") {
+  result = multiply(numbers);
+}
+console.log(`The result is: ${result}`);
+        </pre>
+      </li>
+      <li><strong>Code for <code>package.json</code> bin section:</strong>
+        <pre class="code">
+"bin": {
+  "sum": "./sum.js"
+}
+        </pre>
+      </li>
+      <li><strong>Usage:</strong> Use <code>npm link</code> to test the global command after making the script executable with <code>chmod +x sum.js</code>.</li>
+    </ul>
+  </div>
+
+  <div class="level">
+    <h2>Final Notes</h2>
+    <p class="note">This exercise demonstrates modularization and the use of <code>npm link</code> to make the script executable globally.</p>
+    <p class="important">The script can now be run globally from the command line using <code>sum</code> followed by the operation and numbers.</p>
+  </div>
+
+</body>
+</html>

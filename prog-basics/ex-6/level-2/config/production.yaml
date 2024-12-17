@@ -1,0 +1,6 @@
+app:
+  name: "My Application (Prod)"
+  port: 8080
+database:
+  host: "prod-db-server"
+  port: 5432

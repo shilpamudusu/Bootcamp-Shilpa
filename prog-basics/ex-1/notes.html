@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Notes</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 20px;">
+
+  <h1 style="color: #2c3e50;">Project Notes</h1>
+
+  <section>
+    <h2 style="color: #16a085;">Level 1: Project Setup</h2>
+    <ul>
+      <li><strong>Initialize Node.js Project:</strong> Use <code>npm init -y</code> to quickly set up a project.</li>
+      <li><strong>Scripts:</strong>
+        <ul>
+          <li><code>"start"</code>: Runs the main program (e.g., <code>node index.js</code>).</li>
+          <li><code>"dev"</code>: Adds debugging output (<code>DEBUG=*</code>) for development.</li>
+        </ul>
+      </li>
+      <li><strong>Test Commands:</strong>
+        <ul>
+          <li>Run <code>npm start</code> for normal execution.</li>
+          <li>Run <code>npm run dev</code> for debug mode.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 style="color: #2980b9;">Level 2: Styling Output and Auto-Restarts</h2>
+    <ul>
+      <li><strong>Chalk Package:</strong>
+        <ul>
+          <li><strong>Install:</strong> <code>npm install chalk</code>.</li>
+          <li><strong>Usage:</strong> Styles console output.
+            <pre style="background-color: #ecf0f1; padding: 10px; border-radius: 5px;">
+const chalk = require('chalk');
+console.log(chalk.green("Success!"));
+            </pre>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Nodemon for Development:</strong>
+        <ul>
+          <li><strong>Install:</strong> <code>npm install --save-dev nodemon</code>.</li>
+          <li><strong>Dev Script:</strong> Auto-restart program on changes using <code>"dev": "nodemon index.js"</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 style="color: #8e44ad;">Level 3: Prestart Script</h2>
+    <ul>
+      <li><strong>Prestart Script:</strong> Runs <code>npm install</code> before the <code>start</code> script.
+        <ul>
+          <li>Add to <code>package.json</code>: <code>"prestart": "npm install"</code>.</li>
+        </ul>
+      </li>
+      <li><strong>Testing:</strong>
+        <ul>
+          <li>Delete <code>node_modules</code>: <code>rm -rf node_modules</code>.</li>
+          <li>Run <code>npm start</code> to verify automatic dependency installation.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+</body>
+</html>

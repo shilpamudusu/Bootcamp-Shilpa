@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6: YAML Configuration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+        pre {
+            background: #f4f4f9;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            overflow-x: auto;
+        }
+        code {
+            color: #d6336c;
+            font-family: "Courier New", Courier, monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercise 6: YAML Configuration</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Objective</h2>
+            <p>Use the <code>config</code> library to manage YAML-based configurations effectively.</p>
+        </section>
+
+        <section>
+            <h2>Level 1</h2>
+            <h3>Problem Description</h3>
+            <p>1. Install <code>config</code> and create a <code>default.yaml</code> configuration file.<br>
+               2. Load and use configuration values in the program.</p>
+            <h3>Key Steps</h3>
+            <pre><code>npm install config</code></pre>
+            <pre><code>config/default.yaml:
+appName: MyApplication
+port: 3000</code></pre>
+            <pre><code>import config from 'config';
+console.log(config.get('appName')); // Outputs "MyApplication"</code></pre>
+            <h3>Exit Criteria</h3>
+            <p>The program successfully reads values from <code>default.yaml</code>.</p>
+        </section>
+
+        <section>
+            <h2>Level 2</h2>
+            <h3>Problem Description</h3>
+            <p>1. Add configurations for multiple environments (e.g., <code>development</code>, <code>production</code>).<br>
+               2. Switch configuration based on the environment.</p>
+            <h3>Key Steps</h3>
+            <pre><code>config/development.yaml:
+db: dev_database
+
+config/production.yaml:
+db: prod_database</code></pre>
+            <pre><code>NODE_ENV=development node app.js</code></pre>
+            <pre><code>console.log(config.get('db')); // Outputs environment-specific value</code></pre>
+            <h3>Exit Criteria</h3>
+            <p>The configuration switches based on the <code>NODE_ENV</code>.</p>
+        </section>
+
+        <section>
+            <h2>Level 3</h2>
+            <h3>Problem Description</h3>
+            <p>1. Dynamically adjust behavior (e.g., logging levels) via the configuration.<br>
+               2. Use the config file to load additional commands and dynamically extend functionality.</p>
+            <h3>Key Steps</h3>
+            <pre><code>default.yaml:
+loggingLevel: DEBUG
+commands:
+  sin:
+    file: "./mathFunctions.js"
+    function: "sin"
+  cos:
+    file: "./mathFunctions.js"
+    function: "cos"</code></pre>
+            <pre><code>import config from 'config';
+
+const commands = config.get('commands');
+for (const cmd of Object.values(commands)) {
+    const module = await import(cmd.file);
+    console.log(module[cmd.function](Math.PI / 4));
+}</code></pre>
+            <h3>Exit Criteria</h3>
+            <p>Logging level and behavior dynamically adjusted.<br>
+               Extend functionality by editing YAML without modifying code.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 YAML Configuration Exercise</p>
+    </footer>
+</body>
+</html>
