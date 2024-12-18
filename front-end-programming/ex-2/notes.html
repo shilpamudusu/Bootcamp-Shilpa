@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+    }
+    h1, h2, h3, h4 {
+      color: #0056b3;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h2 {
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .section {
+      background: #ffffff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .highlight {
+      color: #d9534f;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Notes for Exercise 2: Using Tools</h1>
+
+<div class="section">
+  <h2>Objective:</h2>
+  <ul>
+    <li>Learn to package and structure projects using TypeScript.</li>
+    <li>Follow a development lifecycle: Development → Testing → Production.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Key Steps:</h2>
+  <h3>1. Setting Up a TypeScript Project:</h3>
+  <ul>
+    <li>Initialized a project using npm.</li>
+    <li>Configured <code>tsconfig.json</code> to support:
+      <ul>
+        <li>Modern module resolution.</li>
+        <li>JSON imports.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Challenges Encountered:</h2>
+  <h3>1. Importing JSON Files</h3>
+  <p><span class="highlight">Issue:</span> Red underline in TypeScript for JSON imports.</p>
+  <p><span class="highlight">Solution:</span> Enabled the appropriate TypeScript option in <code>tsconfig.json</code>.</p>
+
+  <h3>2. Table Rendering with Dynamic Data</h3>
+  <p><span class="highlight">Issue:</span> TypeScript flagged type mismatches.</p>
+  <p><span class="highlight">Solution:</span> Defined an interface for strict typing.</p>
+
+  <h3>3. Vite Build Error</h3>
+  <p><span class="highlight">Issue:</span> "Could not resolve entry module 'index.html'."</p>
+  <p><span class="highlight">Solution:</span></p>
+  <ul>
+    <li>Moved <code>index.html</code> to the root directory.</li>
+    <li>Updated file paths for compatibility with Vite.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Outputs:</h2>
+  <h3>1. Functional Features:</h3>
+  <ul>
+    <li>Dynamically loads JSON data.</li>
+    <li>Renders an HTML table with headers and rows.</li>
+    <li>Sorting functionality added to headers.</li>
+    <li>Filtering rows via a text input.</li>
+    <li>Row highlighting on hover.</li>
+  </ul>
+
+  <h3>2. Development Lifecycle Tools:</h3>
+  <ul>
+    <li><strong>Development:</strong> Live reloading with Vite.</li>
+    <li><strong>Testing:</strong>
+      <ul>
+        <li>Linting with TypeScript.</li>
+        <li>Previewing the production build.</li>
+      </ul>
+    </li>
+    <li><strong>Production:</strong> Bundled output to the <code>dist</code> folder.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Final Output:</h2>
+  <ul>
+    <li>A fully functional, responsive table rendered dynamically using TypeScript.</li>
+    <li>Features include sorting, filtering, and row highlighting.</li>
+    <li>Production-ready build generated using Vite.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Reflection:</h2>
+  <p>This exercise provided hands-on experience with TypeScript, project structuring, and modern development workflows. Despite challenges, the final output meets all objectives and prepares a strong foundation for handling similar tasks in real-world projects.</p>
+</div>
+
+</body>
+</html>

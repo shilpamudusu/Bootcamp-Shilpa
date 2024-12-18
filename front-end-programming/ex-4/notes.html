@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React & useState Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 28px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      background-color: #e1f5fe;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      color: #333;
+      font-size: 18px;
+    }
+    li:nth-child(odd) {
+      background-color: #b3e5fc;
+    }
+    .note-title {
+      font-weight: bold;
+      color: #0277bd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>React useState Hook Notes</h1>
+    <ul>
+      <li>
+        <span class="note-title">Import `useState`:</span> Ensure you import `useState` from React when using it in functional components.
+      </li>
+      <li>
+        <span class="note-title">React Hook:</span> `useState` allows you to manage state in a functional component.
+      </li>
+      <li>
+        <span class="note-title">Error Resolution:</span> If TypeScript shows "Cannot find name 'useState'", check if `useState` is imported correctly.
+      </li>
+      <li>
+        <span class="note-title">React Installation:</span> Ensure that React and its types (`@types/react`, `@types/react-dom`) are installed to avoid errors.
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>

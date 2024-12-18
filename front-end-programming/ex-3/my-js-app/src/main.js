@@ -1,30 +1,24 @@
-import './style.css';
-import students from './data/students.json';
+import './style.css'
+import javascriptLogo from './javascript.svg'
+import viteLogo from '/vite.svg'
+import { setupCounter } from './counter.js'
 
-const renderTable = (data) => {
-  const table = document.createElement('table');
-  const headerRow = document.createElement('tr');
+document.querySelector('#app').innerHTML = `
+  <div>
+    <a href="https://vite.dev" target="_blank">
+      <img src="${viteLogo}" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
+    </a>
+    <h1>Hello Vite!</h1>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
+    <p class="read-the-docs">
+      Click on the Vite logo to learn more
+    </p>
+  </div>
+`
 
-  // Create headers dynamically
-  Object.keys(data[0]).forEach(key => {
-    const th = document.createElement('th');
-    th.textContent = key;
-    headerRow.appendChild(th);
-  });
-  table.appendChild(headerRow);
-
-  // Populate rows
-  data.forEach(student => {
-    const row = document.createElement('tr');
-    Object.values(student).forEach(value => {
-      const td = document.createElement('td');
-      td.textContent = value;
-      row.appendChild(td);
-    });
-    table.appendChild(row);
-  });
-
-  document.body.appendChild(table);
-};
-
-renderTable(students);
+setupCounter(document.querySelector('#counter'))

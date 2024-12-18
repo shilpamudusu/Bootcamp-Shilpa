@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Exploration</title>
+    <style>
+        /* Inline CSS for styling the table */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .dynamic-row {
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>DevTools Exploration</h1>
+    <p>Use Chrome DevTools to debug, analyze, and optimize front-end code. Follow the tasks below:</p>
+    <ol>
+        <li>Open Chrome DevTools (F12 or Ctrl+Shift+I).</li>
+        <li>Complete tasks in Console, Network, Elements, and Performance tabs.</li>
+    </ol>
+
+    <!-- Table for DOM Manipulation -->
+    <table id="example-table">
+        <tr><th>Header</th></tr>
+    </table>
+
+    <script>
+        // Console and Errors
+        console.log("Debugging Example: Script Loaded Successfully");
+
+        try {
+            // Trigger an intentional error
+            const missingElement = document.getElementById("nonExistentId");
+            console.log(missingElement.innerText); // Error
+        } catch (error) {
+            console.error("Caught Error:", error.message);
+        }
+
+        // Load JSON and Observe Network Activity
+        fetch('data/data.json') // Ensure data.json is in the correct directory
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => console.log("Fetched Data:", data))
+            .catch(error => console.error("Fetch Error:", error));
+
+        // Dynamically Add a Table Row
+        const table = document.getElementById("example-table");
+        const newRow = table.insertRow();
+        newRow.className = "dynamic-row"; // Apply CSS class
+        newRow.innerHTML = "<td>Dynamic Row</td>";
+
+        // Real-Time CSS Editing
+        console.log("Modify the row's background color in the Elements tab!");
+
+        // Performance Analysis
+        console.time("Performance Test");
+        setTimeout(() => {
+            console.timeEnd("Performance Test");
+        }, 500);
+    </script>
+</body>
+</html>
