@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    
+    <!-- Google Font Integration -->
+    <link id="google-font-link" rel="stylesheet" href="">
+    
+    <style>
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        /* Highlight Class */
+        .highlight {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+
+        /* Browser Info Section */
+        #browserInfo {
+            margin-top: 20px;
+        }
+
+        #browserInfo p {
+            font-size: 14px;
+        }
+        
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Student Management Dashboard</h1>
+
+    <!-- Button to Add Student -->
+    <button onclick="addStudent()">Add Student</button>
+
+    <!-- Table for displaying student records -->
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- Button to Change Font -->
+    <button onclick="changeFont()">Change Font</button>
+
+    <!-- Browser Info Section -->
+    <div id="browserInfo">
+        <p><strong>Browser:</strong> <span id="browserName"></span></p>
+        <p><strong>Version:</strong> <span id="browserVersion"></span></p>
+        <p><strong>Window Dimensions:</strong> <span id="windowDimensions"></span></p>
+        <p><strong>User Agent:</strong> <span id="userAgent"></span></p>
+    </div>
+
+    <!-- External JavaScript File -->
+    <script>
+        // Add student row dynamically
+        function addStudent() {
+            const table = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            // Insert cells and populate them
+            newRow.insertCell(0).innerText = 2;  // ID
+            newRow.insertCell(1).innerText = 'Jane Smith';  // Name
+            newRow.insertCell(2).innerText = 19;  // Age
+            newRow.insertCell(3).innerText = 'B';  // Grade
+
+            // Highlight the newly added row
+            newRow.classList.add('highlight');
+        }
+
+        // Change font of the table using Google Fonts
+        function changeFont() {
+            const link = document.getElementById('google-font-link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Varela+Round&display=swap';
+            document.getElementById('studentTable').style.fontFamily = "'Varela Round', sans-serif";
+        }
+
+        // Display browser information
+        window.onload = function() {
+            const browserInfo = document.getElementById('browserInfo');
+            document.getElementById('browserName').innerText = navigator.appName;
+            document.getElementById('browserVersion').innerText = navigator.appVersion;
+            document.getElementById('windowDimensions').innerText = `${window.innerWidth} x ${window.innerHeight}`;
+            document.getElementById('userAgent').innerText = navigator.userAgent;
+
+            // Render table with initial data
+            const data = loadData();
+            renderTable(data);
+        };
+
+        // Load initial student data
+        function loadData() {
+            return [
+                { "id": 1, "name": "John Doe", "age": 18, "grade": "A" },
+                { "id": 2, "name": "Jane Smith", "age": 19, "grade": "B" }
+            ];
+        }
+
+        // Render table rows dynamically
+        function renderTable(data) {
+            const tableBody = document.getElementById('studentTable').getElementsByTagName('tbody')[0];
+            
+            data.forEach(student => {
+                const newRow = tableBody.insertRow();
+                newRow.insertCell(0).innerText = student.id;
+                newRow.insertCell(1).innerText = student.name;
+                newRow.insertCell(2).innerText = student.age;
+                newRow.insertCell(3).innerText = student.grade;
+            });
+        }
+    </script>
+
+</body>
+</html>
