@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +14,9 @@
   "description": "",
   "dependencies": {
     "papaparse": "^5.4.1",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
     "vite": "^6.0.3"
   }
 }

@@ -1,0 +1,6 @@
+@for $i from 1 through 8 {
+    .m-#{$i} {
+      margin: #{2 * $i}px;
+    }
+  }
+  
