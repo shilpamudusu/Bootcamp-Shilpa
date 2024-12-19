@@ -39,3 +39,26 @@ body {
     transform: scale(1.1);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
+
+/* GitHub Corner Link Styling */
+.github-link {
+    position: fixed;
+    top: 15px; /* Adjust as needed */
+    right: 15px; /* Adjust as needed */
+    z-index: 1000;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.github-link img {
+    display: block; /* Ensures the image does not behave like inline text */
+    width: 40px; /* Set the fixed size for the image */
+    height: 40px;
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    transition: transform 0.3s ease;
+}
+
+.github-link img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
