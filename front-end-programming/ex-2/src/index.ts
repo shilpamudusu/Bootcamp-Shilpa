@@ -10,6 +10,8 @@ interface DataRow {
 
 // Define the data type explicitly
 const typedData: DataRow[] = data;
+console.log(typedData);
+
 
 // Create a table
 const table = document.createElement('table');
