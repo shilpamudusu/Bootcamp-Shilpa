@@ -91,8 +91,8 @@ async function fetchPapers() {
         const data = await response.text();
         papers = Papa.parse(data, { header: true }).data.map(paper => ({
             ...paper,
-            authors: (paper.authors),
-            references:(paper.references)
+            authors: (paper.authors).replace("[","").replace("]","").replace("'","").replace("'",""),
+            references:(paper.references).replace("[","").replace("]","").replace("'","").replace("'","")
         }));
         filteredPapers = [...papers];
         console.log(filteredPapers);
@@ -168,7 +168,7 @@ function renderPapers() {
         card.innerHTML = `
             <h2>${paper.title}</h2>
             <div class="paper-authors">
-                <strong>Authors:</strong> ${paper.authors[0]}
+                <strong>Authors:</strong> ${paper.authors}
             </div>
             <div class="paper-meta">
                 <span><strong>Year:</strong> ${paper.year}</span>
