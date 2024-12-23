@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Widget - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="weather-widget.js" defer></script>
+</head>
+<body>
+  <div class="main-container">
+    <h1>Weather Widget</h1>
+    <form id="city-form">
+      <label for="city">Enter City Name:</label>
+      <input type="text" id="city" name="city" placeholder="Los Angeles" required>
+      <button type="submit">Update Weather</button>
+    </form>
+    <city-weather city="Los Angeles"></city-weather>
+  </div>
+</body>
+</html>
