@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "description": "High-quality wireless headphones with noise-canceling features.",
+    "price": 199.99,
+    "image": "/images/wireless-headphones.jpg",
+    "category": "Electronics"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "description": "Latest generation smartphone with advanced features.",
+    "price": 899.99,
+    "image": "/images/smartphone.jpg",
+    "category": "Electronics"
+  },
+  {
+    "id": 3,
+    "name": "Running Shoes",
+    "description": "Lightweight and comfortable running shoes for daily exercise.",
+    "price": 69.99,
+    "image": "/images/running-shoes.jpg",
+    "category": "Sports"
+  },
+  {
+    "id": 4,
+    "name": "Backpack",
+    "description": "Durable backpack with multiple compartments and ergonomic design.",
+    "price": 49.99,
+    "image": "/images/backpack.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Coffee Maker",
+    "description": "Automatic coffee maker with a built-in grinder.",
+    "price": 129.99,
+    "image": "/images/coffee-maker.jpg",
+    "category": "Kitchen"
+  }
+]

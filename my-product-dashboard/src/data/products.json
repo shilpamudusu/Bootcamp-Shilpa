@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Earbuds",
+    "price": 89.99,
+    "description": "High-quality sound with noise cancellation.",
+    "stock": true,
+    "image": "/images/wireless-earbuds.jpg"
+  },
+  {
+    "id": 2,
+    "name": "4K Smart TV",
+    "price": 499.99,
+    "description": "60-inch screen, ultra HD with smart features.",
+    "stock": true,
+    "image": "/images/smart-tv.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "price": 35.99,
+    "description": "Portable speaker with deep bass and 12-hour battery life.",
+    "stock": true,
+    "image": "/images/bluetooth-speaker.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Laptop Backpack",
+    "price": 49.99,
+    "description": "Durable, waterproof backpack with plenty of storage.",
+    "stock": true,
+    "image": "/images/laptop-backpack.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Smart Watch",
+    "price": 199.99,
+    "description": "Fitness tracking, heart rate monitor, and notifications.",
+    "stock": false,
+    "image": "/images/smartwatch.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Wireless Mouse",
+    "price": 24.99,
+    "description": "Ergonomically designed mouse with Bluetooth connectivity.",
+    "stock": true,
+    "image": "/images/wireless-mouse.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Gaming Keyboard",
+    "price": 79.99,
+    "description": "Mechanical keys with RGB backlighting.",
+    "stock": true,
+    "image": "/images/gaming-keyboard.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Bluetooth Headphones",
+    "price": 59.99,
+    "description": "Comfortable over-ear headphones with long battery life.",
+    "stock": true,
+    "image": "/images/bluetooth-headphones.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Smartphone Stand",
+    "price": 15.99,
+    "description": "Adjustable stand for smartphones and tablets.",
+    "stock": true,
+    "image": "/images/smartphone-stand.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Portable Power Bank",
+    "price": 29.99,
+    "description": "Fast charging power bank with 10,000mAh capacity.",
+    "stock": true,
+    "image": "/images/power-bank.jpg"
+  }
+]
