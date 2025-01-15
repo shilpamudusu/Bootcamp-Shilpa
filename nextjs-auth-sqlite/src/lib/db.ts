@@ -16,17 +16,7 @@ export async function initDb() {
       name TEXT,
       email TEXT UNIQUE,
       password TEXT
-    );
-
-    CREATE TABLE IF NOT EXISTS annotations (
-      id TEXT PRIMARY KEY,
-      widget_id TEXT,
-      text TEXT,
-      x REAL,
-      y REAL,
-      user_id TEXT,
-      created_at TEXT
-    );
+    )
   `)
 }
 

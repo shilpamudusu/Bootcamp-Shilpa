@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antibody Characterization Web Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        main {
+            padding: 2rem 3rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        h2 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            color: #0056b3;
+            margin-top: 1.5rem;
+        }
+        ul {
+            margin: 0;
+            padding: 0 1.5rem;
+            list-style-type: disc;
+        }
+        code {
+            background: #eee;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .api-endpoints, .frontend-workflow {
+            background: #e8f4fd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid #d0e8ff;
+        }
+        ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Antibody Characterization Web Application</h1>
+</header>
+
+<main>
+    <section>
+        <h2>Overview</h2>
+        <p>The Antibody Characterization Web Application aims to provide users with tools for analyzing and visualizing antibody-related data. Key features include a scorecard table, a 3D protein viewer, and dynamic property coloring.</p>
+    </section>
+
+    <section>
+        <h2>Design</h2>
+
+        <h3>1. Scorecard Table</h3>
+        <ul>
+            <li><strong>Purpose</strong>: Display tabular data, such as antibody properties, scores, and other metrics.</li>
+            <li><strong>Features</strong>:
+                <ul>
+                    <li>Pagination for large datasets.</li>
+                    <li>Search and filter functionality.</li>
+                    <li>Sortable columns.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>2. 3D Protein Viewer</h3>
+        <ul>
+            <li><strong>Purpose</strong>: Visualize protein structures in an interactive 3D environment.</li>
+            <li><strong>Features</strong>:
+                <ul>
+                    <li>Rotation, zoom, and pan controls.</li>
+                    <li>Support for common protein structure file formats (e.g., PDB).</li>
+                    <li>Toggle between different views (e.g., surface, ribbon, backbone).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>3. Dynamic Property Coloring</h3>
+        <ul>
+            <li><strong>Purpose</strong>: Highlight protein regions dynamically based on selected properties (e.g., hydrophobicity, charge).</li>
+            <li><strong>Features</strong>:
+                <ul>
+                    <li>Color mapping for continuous or categorical property values.</li>
+                    <li>Legend and controls for adjusting coloring thresholds.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>API Endpoints</h2>
+        <div class="api-endpoints">
+            <h3>1. Fetch CSV Data</h3>
+            <ul>
+                <li><strong>Endpoint</strong>: <code>/api/data/csv</code></li>
+                <li><strong>Method</strong>: GET</li>
+                <li><strong>Description</strong>: Retrieve antibody-related data in CSV format.</li>
+                <li><strong>Response</strong>:
+                    <ul>
+                        <li>Metadata (e.g., column definitions).</li>
+                        <li>Tabular data.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2. Fetch Protein Structure</h3>
+            <ul>
+                <li><strong>Endpoint</strong>: <code>/api/protein/structure</code></li>
+                <li><strong>Method</strong>: GET</li>
+                <li><strong>Description</strong>: Fetch protein structure files for rendering in the 3D viewer.</li>
+                <li><strong>Parameters</strong>:
+                    <ul>
+                        <li><code>protein_id</code> (required): Unique identifier for the protein.</li>
+                    </ul>
+                </li>
+                <li><strong>Response</strong>: Protein structure data (e.g., PDB content).</li>
+            </ul>
+
+            <h3>3. Fetch Property Coloring</h3>
+            <ul>
+                <li><strong>Endpoint</strong>: <code>/api/protein/properties</code></li>
+                <li><strong>Method</strong>: GET</li>
+                <li><strong>Description</strong>: Retrieve property data for dynamic coloring.</li>
+                <li><strong>Parameters</strong>:
+                    <ul>
+                        <li><code>protein_id</code> (required): Unique identifier for the protein.</li>
+                        <li><code>property</code> (optional): Specific property to highlight.</li>
+                    </ul>
+                </li>
+                <li><strong>Response</strong>: Property values and corresponding regions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Frontend Workflow</h2>
+        <div class="frontend-workflow">
+            <h3>1. Render Table</h3>
+            <ul>
+                <li>Fetch CSV data from the <code>/api/data/csv</code> endpoint.</li>
+                <li>Parse and display data in the scorecard table.</li>
+                <li>Implement pagination, sorting, and filtering.</li>
+            </ul>
+
+            <h3>2. 3D Viewing</h3>
+            <ul>
+                <li>Fetch protein structure data from the <code>/api/protein/structure</code> endpoint.</li>
+                <li>Use a 3D rendering library (e.g., NGL Viewer, Mol* Viewer) to visualize the structure.</li>
+                <li>Add user controls for interaction (e.g., zoom, rotate).</li>
+            </ul>
+
+            <h3>3. Dynamic Coloring</h3>
+            <ul>
+                <li>Fetch property data from the <code>/api/protein/properties</code> endpoint.</li>
+                <li>Map property values to color schemes.</li>
+                <li>Update the 3D protein viewer dynamically.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Steps to Build the Application</h2>
+        <ol>
+            <li><strong>Understand Requirements</strong>
+                <ul>
+                    <li>Research antibody characterization and related visualization tools.</li>
+                    <li>Identify necessary datasets and formats (e.g., PDB, CSV).</li>
+                </ul>
+            </li>
+            <li><strong>Plan Architecture</strong>
+                <ul>
+                    <li>Backend: Define API structure and endpoints.</li>
+                    <li>Frontend: Plan UI/UX for the table, 3D viewer, and property coloring.</li>
+                    <li>Database: Store necessary metadata and structure information.</li>
+                </ul>
+            </li>
+            <li><strong>Set Up Environment</strong>
+                <ul>
+                    <li>Backend: Use a framework like Express.js, Flask, or FastAPI.</li>
+                    <li>Frontend: Use React.js or Vue.js for a dynamic UI.</li>
+                    <li>Visualization: Integrate a protein visualization library.</li>
+                </ul>
+            </li>
+            <li><strong>Develop API</strong>
+                <ul>
+                    <li>Implement endpoints for fetching CSV data, protein structures, and property coloring.</li>
+                    <li>Test APIs with sample data.</li>
+                </ul>
+            </li>
+            <li><strong>Build Frontend</strong>
+                <ul>
+                    <li>Create the scorecard table with features like sorting and filtering.</li>
+                    <li>Integrate the 3D protein viewer.</li>
+                    <li>Add functionality for dynamic property coloring.</li>
+                </ul>
+            </li>
+            <li><strong>Integrate and Test</strong>
+                <ul>
+                    <li>Connect frontend components to backend APIs.</li>
+                    <li>Test each feature for usability and performance.</li>
+                </ul>
+            </li>
+            <li><strong>Optimize and Deploy</strong>
+                <ul>
+                    <li>Optimize API and frontend performance.</li>
+                    <li>Deploy the application using platforms like AWS, Vercel, or Heroku.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Additional Notes</h2>
+        <ul>
+            <li><strong>Tools and Libraries</strong>:
+                <ul>
+                    <li>Protein Viewer: Mol* Viewer, NGL Viewer.</li>
+                    <li>Frontend Framework: React.js, Tailwind CSS.</li>
+                    <li>Backend Framework: FastAPI, Flask.</li>
+                </ul>
+            </li>
+            <li><strong>Challenges</strong>:
+                <ul>
+                    <li>Handling large protein structure files.</li>
+                    <li>Ensuring performance in dynamic coloring and 3D rendering.</li>
+                    <li>Providing an intuitive and user-friendly interface.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</main>
+
+</body>
+</html>
+

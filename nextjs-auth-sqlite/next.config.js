@@ -1,7 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  // Add any other configuration options here
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/dashboard',
+        destination: '/login',  // Ensure this is not causing a redirect loop or wrong routing
+        permanent: false,
+      },
+    ]
+  },
 }
-
-module.exports = nextConfig

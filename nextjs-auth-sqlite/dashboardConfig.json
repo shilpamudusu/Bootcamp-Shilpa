@@ -4,7 +4,7 @@
       {
         "type": "card",
         "title": "Welcome",
-        "data": "Welcome to your dashboard!"
+        "data": "Welcome to your authenticated dashboard!"
       },
       {
         "type": "chart",
@@ -12,7 +12,7 @@
           "labels": ["January", "February", "March", "April", "May", "June", "July"],
           "datasets": [
             {
-              "label": "Sales",
+              "label": "User Signups",
               "data": [65, 59, 80, 81, 56, 55, 40],
               "borderColor": "rgb(75, 192, 192)",
               "backgroundColor": "rgba(75, 192, 192, 0.5)"
@@ -22,11 +22,11 @@
       },
       {
         "type": "dataTable",
-        "headers": ["Name", "Age", "City"],
+        "headers": ["Username", "Email", "Last Login"],
         "data": [
-          ["John Doe", 30, "New York"],
-          ["Jane Smith", 25, "Los Angeles"],
-          ["Bob Johnson", 35, "Chicago"]
+          ["John Doe", "john@example.com", "2023-06-15"],
+          ["Jane Smith", "jane@example.com", "2023-06-14"],
+          ["Bob Johnson", "bob@example.com", "2023-06-13"]
         ]
       }
     ]

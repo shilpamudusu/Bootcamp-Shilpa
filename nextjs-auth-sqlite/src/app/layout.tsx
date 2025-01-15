@@ -7,8 +7,8 @@ import { initDb } from '@/lib/db'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Annotatable Widgets Example',
-  description: 'An example of using annotatable widgets with NextAuth and SQLite',
+  title: 'NextAuth SQLite Example',
+  description: 'A simple example of using NextAuth.js with SQLite',
 }
 
 initDb() // Initialize the database

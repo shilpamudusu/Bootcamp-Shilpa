@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { useSession } from 'next-auth/react'
 
@@ -11,9 +13,10 @@ interface AnnotationProps {
     userId: string
     createdAt: string
   }>
+  children: React.ReactNode
 }
 
-export function Annotation({ widgetId, initialAnnotations }: AnnotationProps) {
+export function Annotation({ widgetId, initialAnnotations, children }: AnnotationProps) {
   const [annotations, setAnnotations] = useState(initialAnnotations)
   const [newAnnotation, setNewAnnotation] = useState('')
   const [annotationPosition, setAnnotationPosition] = useState({ x: 0, y: 0 })
@@ -34,7 +37,7 @@ export function Annotation({ widgetId, initialAnnotations }: AnnotationProps) {
         text: newAnnotation,
         x: annotationPosition.x,
         y: annotationPosition.y,
-        userId: session.user.id,
+        userId: session.user.id as string,
         createdAt: new Date().toISOString(),
       }
 
@@ -53,6 +56,7 @@ export function Annotation({ widgetId, initialAnnotations }: AnnotationProps) {
 
   return (
     <div className="relative" onClick={handleClick}>
+      {children}
       {annotations.map((annotation) => (
         <div
           key={annotation.id}

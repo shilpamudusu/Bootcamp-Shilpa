@@ -10,6 +10,22 @@ const dbPromise = open({
   driver: sqlite3.Database
 })
 
+// Extending the types of user and token to include `id`
+declare module "next-auth" {
+  interface User {
+    id: string; // Adjust based on your `id` type, could be `number` or `string`
+  }
+
+  interface Session {
+    user: User;
+  }
+
+  interface JWT {
+    id: string;
+    email: string;
+  }
+}
+
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -36,7 +52,7 @@ const handler = NextAuth({
         }
 
         return {
-          id: user.id,
+          id: user.id, // Assuming `id` is a valid field in the `user` object
           email: user.email,
           name: user.name,
         }
@@ -64,4 +80,3 @@ const handler = NextAuth({
 })
 
 export { handler as GET, handler as POST }
-
