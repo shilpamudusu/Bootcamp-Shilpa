@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
@@ -16,19 +16,20 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieValue = cookies().get("your-cookie-name")?.value || ""; // Adjust as per your cookie handling
+
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        <TRPCReactProvider cookies={cookies().toString()}>
+        <TRPCReactProvider cookies={cookieValue}>
           {children}
         </TRPCReactProvider>
       </body>
     </html>
   );
 }
-
