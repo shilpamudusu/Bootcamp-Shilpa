@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gene Essentiality Map</title>
+  <!-- Load Chart.js and its plugin from CDN with specific versions -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.1.0/chartjs-plugin-annotation.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #app {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    input {
+      width: 300px;
+      padding: 8px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    #tissueList {
+      margin-top: 20px;
+    }
+    .tissue-tag {
+      display: inline-block;
+      background-color: #F0F0F0;
+      padding: 4px 8px;
+      margin: 4px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .loading {
+      display: none;
+      margin-top: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Gene Essentiality Map</h1>
+    <p>Enter an Ensembl ID to fetch the gene essentiality map.</p>
+    <input type="text" id="ensemblId" placeholder="Enter Ensembl ID (e.g., ENSG00000012048)" />
+    <button id="fetchData">Fetch Data</button>
+    <div id="loading" class="loading">Loading...</div>
+    <div id="error" class="error"></div>
+    <div id="tissueList">
+      <h3>Available Tissues:</h3>
+      <div id="tissueTags"></div>
+    </div>
+    <canvas id="essentialityChart" width="800" height="400" style="display: none;"></canvas>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const API_URL = "https://api.platform.opentargets.org/api/v4/graphql";
+      const fetchDataButton = document.getElementById("fetchData");
+      const ensemblInput = document.getElementById("ensemblId");
+      const errorDiv = document.getElementById("error");
+      const loadingDiv = document.getElementById("loading");
+      const essentialityChart = document.getElementById("essentialityChart");
+      const tissueList = document.getElementById("tissueList");
+      const tissueTags = document.getElementById("tissueTags");
+      let chartInstance = null;
+      
+      const tissueNames = [
+        "pleurabile", "duct", "prostate gland", "eye", "uterus", "liver", "other", "hepatopancreatic ampulla", "bone tissue", "lymphoid tissue", "mammalian vulva", "pancreas", "skin of body", "thyroid gland", "craniocervical region", "Peripheral Nervous System", "renal system", "testis", "external soft tissue zone", "internal female genitalia", "hematopoietic tissue", "kidney", "intestine", "uterine cervix", "lung", "subdivision of digestive tract", "breast"
+      ];
+      // Hide tissue list initially
+      tissueList.style.display = "none";
+
+      fetchDataButton.addEventListener("click", async () => {
+        const ensemblId = ensemblInput.value.trim();
+        if (!ensemblId) {
+          errorDiv.textContent = "Please enter a valid Ensembl ID.";
+          essentialityChart.style.display = "none";
+          tissueList.style.display = "none";
+          return;
+        }
+        // Show loading state
+        loadingDiv.style.display = "block";
+        errorDiv.textContent = "";
+        tissueTags.innerHTML = "";
+        essentialityChart.style.display = "none";
+        const query = `
+          query Depmap($ensemblId: String!) {
+            target(ensemblId: $ensemblId) {
+              depMapEssentiality {
+                tissueName
+                screens {
+                  cellLineName
+                  geneEffect
+                }
+              }
+            }
+          }
+        `;
+        try {
+          const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              query,
+              variables: { ensemblId },
+            }),
+          });
+          const data = await response.json();
+          if (data.errors) {
+            throw new Error(data.errors[0].message);
+          }
+          const essentialityData = data.data.target.depMapEssentiality;
+          if (!essentialityData || essentialityData.length === 0) {
+            throw new Error("No essentiality data found for the provided Ensembl ID.");
+          }
+          // Display tissue names
+          tissueList.style.display = "block";
+          tissueNames.forEach(tissue => {
+            const tissueTag = document.createElement("span");
+            tissueTag.className = "tissue-tag";
+            tissueTag.textContent = tissue;
+            tissueTags.appendChild(tissueTag);
+          });
+          // Prepare data for the scatter plot
+          const scatterData = [];
+          essentialityData.forEach((item, index) => {
+            item.screens.forEach((screen) => {
+              if (screen.geneEffect !== null) {
+                scatterData.push({
+                  x: screen.geneEffect,
+                  y: tissueNames.indexOf(item.tissueName),
+                  tissue: item.tissueName,
+                  cellLine: screen.cellLineName,
+                });
+              }
+            });
+          });
+          if (scatterData.length === 0) {
+            throw new Error("No valid data to plot.");
+          }
+          // Display the chart
+          essentialityChart.style.display = "block";
+          if (chartInstance) {
+            chartInstance.destroy();
+          }
+          chartInstance = new Chart(essentialityChart, {
+            type: "scatter",
+            data: {
+              datasets: [{
+                label: "Gene Essentiality",
+                data: scatterData,
+                backgroundColor: scatterData.map(point => point.x <= -1 ? 'rgba(239, 68, 68, 0.6)' : 'rgba(59, 130, 246, 0.6)'),
+                borderColor: scatterData.map(point => point.x <= -1 ? 'rgba(239, 68, 68, 1)' : 'rgba(59, 130, 246, 1)'),
+                borderWidth: 1,
+              }]
+            },
+            options: {
+              responsive: true,
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: "Gene Effect"
+                  },
+                  grid: {
+                    color: (context) => context.tick.value === -1 ? 'rgba(169, 169, 169, 0.5)' : undefined,
+                    lineWidth: (context) => context.tick.value === -1 ? 2 : 1,
+                    borderDash: (context) => context.tick.value === -1 ? [5, 5] : undefined
+                  }
+                },
+                y: {
+                  title: {
+                    display: true,
+                    text: "Tissue Name"
+                  },
+                  ticks: {
+                    callback: function(value) {
+                      return tissueNames[value];
+                    }
+                  }
+                }
+              },
+              plugins: {
+                tooltip: {
+                  callbacks: {
+                    label: function(context) {
+                      const tissue = scatterData[context.dataIndex].tissue;
+                      const cellLine = scatterData[context.dataIndex].cellLine;
+                      const x = context.raw.x;
+                      return [
+                        `Tissue: ${tissue}`,
+                        `Cell Line: ${cellLine}`,
+                        `Gene Effect: ${x}`
+                      ];
+                    }
+                  }
+                }
+              }
+            }
+          });
+        } catch (error) {
+          console.error('Error:', error);
+          errorDiv.textContent = error.message || "An error occurred while fetching data. Please try again.";
+          essentialityChart.style.display = "none";
+          tissueList.style.display = "none";
+        } finally {
+          loadingDiv.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
